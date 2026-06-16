@@ -518,7 +518,8 @@ class Agenda:
             return
 
         caminho = Path(__file__).resolve().parent / "relatorios" / "relatorio_eventos.txt"
-
+        caminho.parent.mkdir(parents=True, exist_ok=True)
+        
         with open(caminho, "w", encoding="utf-8") as arquivo:
             arquivo.write("RELATÓRIO GERAL DE EVENTOS\n")
             arquivo.write("=" * 60 + "\n\n")
